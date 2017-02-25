@@ -1,0 +1,13 @@
+add player  [Done]
+give shooting abilities [Done]
+add another enemy   [Done]
+do something about levels   [Doing]
+do something about texts    [Done]
+do something about menu [Done]
+do something about score
+
+
+-----------------
+
+do something about continous fire   [Done]
+
