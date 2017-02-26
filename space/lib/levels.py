@@ -13,7 +13,7 @@ class Level1(object):
         if Level1.count1:
             Level1.t1 += 1
             if Level1.t1 == 75:
-                r = SMAlien(randint(100,300),0)
+                r = SMAlien(randint(100+200,300+200),0)
 
                 #r = Red(randint(100,300),0)
 
@@ -32,7 +32,7 @@ class Level1(object):
         if Level1.count2:
             Level1.t1 += 1
             if Level1.t1 == 75:
-                r = Red(randint(100,300),0)
+                r = Red(randint(100+200,300+200),0)
                 enemi.append(r)
                 Level1.count2 -= 1
                 Level1.t1 = 0

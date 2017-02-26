@@ -104,12 +104,16 @@ class Ship(Rect,object):
 
         if self.X < 0 + 20:
             self.X = 20
+            self.dirx = 0   # testing for quick back
         elif self.X > 800 - 20:
+            self.dirx = 0
             self.X = 780
         if self.Y < 0 + 20:
             self.Y = 20
+            self.diry = 0
         elif self.Y > 600 - 20:
             self.Y = 580
+            self.diry = 0
 
         self.midbottom = self.X, self.Y
 
