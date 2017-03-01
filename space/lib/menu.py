@@ -1,4 +1,4 @@
-from pygame import Rect,mask,key,font,display,event,mouse,image
+from pygame import Rect,mask,key,font,display,event,mouse,image,mixer
 from pygame.locals import *
 
 import sys
@@ -44,6 +44,9 @@ class Menu(object):
     """This is the main menu class"""
 
     def run(self):
+        #mixer.init()
+        #mixer.music.load('sound/ACDC.mp3')
+        #mixer.music.play(-1)
 
         new = NewGame()
         new.update()
@@ -55,6 +58,8 @@ class Menu(object):
 
             if ev.type == QUIT:
                 sys.exit()
+            if ev.type == KEYDOWN and ev.key == K_SPACE:
+                going = False
             if ev.type == MOUSEBUTTONDOWN:
                 if new.click(mouse.get_pos()):
                     print "hello world"

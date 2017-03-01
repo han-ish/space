@@ -1,6 +1,7 @@
 from pygame import *
+from sqlite3 import connect
 
-scr = display.set_mode((800,600))
+scr = display.set_mode((800,600), 0)
 scrrect = scr.get_rect()
 
 from lib.enemi import enemi
@@ -103,6 +104,18 @@ class Game(object):
         Levelmess.update('Thank you for playing')
         Levelmess.render()
         display.update()
+        time.wait(1000)
+
+        print scoremess
+
+        highscore = self.store(scoremess)
+        Background.render()
+        Levelmess.update('score %s High Score : %s' %(scoremess, highscore))
+        Levelmess.render()
+        display.update()
+
+        if mixer:
+            mixer.music.fadeout(1000)
 
         time.wait(1000)
 
@@ -110,6 +123,18 @@ class Game(object):
         enemi[:] = []
         level.clear()
         ship.clear()
+
+    def store(self,score):
+        conn = connect('score.db')
+        cursor = conn.cursor()
+        cursor.execute('select * from score_table;')
+        old_score = cursor.fetchone()
+        if score > old_score[0]:
+            cursor.execute('update score_table set score = %s' %(score))
+            conn.commit()
+            return score
+        return old_score[0]
+
 
 
 

@@ -13,6 +13,7 @@ def collideship(bullet):
     return False
 
 class Shotenemi(list,object):
+    """This class takes care of the bullets"""
 
     def update(self):
         for f in self[:]:

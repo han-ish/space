@@ -14,7 +14,7 @@ class Score(object):
     @staticmethod
     def update():
         Score.mess = police.render("Score : " + str(Score.score), 1, (200,200,200))
-
+        return Score.score
     @staticmethod
     def render():
         scr.blit(Score.mess, (0,0))

@@ -10,6 +10,7 @@ from .shotenemi import shotenemi
 from .ship import ship
 
 class Red(Rect,object):
+    """The Red enemies"""
 
     img = image.load('img/square.png')
     rect = img.get_rect()
@@ -48,7 +49,7 @@ class Red(Rect,object):
         self.Y += 0.5
         self.midbottom = self.X, self.Y
 
-        if self.left < ship.centerx < self.right and self.tick >= 50:
+        if self.left < ship.centerx < self.right and self.tick >= 10:
             shotenemi.append(Red.Bullet(self.midbottom))
             self.tick = 0
 
@@ -61,6 +62,7 @@ class Red(Rect,object):
         scr.blit(Red.img,self)
 
 class SMAlien(Rect,object):
+    """The black aliens"""
 
     img = image.load('img/space11.png')
     msk = mask.from_surface(img,1)
@@ -103,7 +105,7 @@ class SMAlien(Rect,object):
         self.Y += 0.5
         self.midbottom = self.X, self.Y
 
-        if self.left < ship.centerx < self.right and self.tick >= 50:
+        if self.left < ship.centerx < self.right and self.tick >= 10:
             shotenemi.append(self.Bullet(self.midbottom))
             shotenemi.append(self.Bullet(self.midbottom))
             shotenemi.append(self.Bullet(self.midbottom))

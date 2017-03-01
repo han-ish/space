@@ -13,6 +13,7 @@ def collidelist(bullet,lstenemi):
     return -1
 
 class Shotami(list,object):
+    """This class takes care of the enemy hits"""
 
     def update(self):
         for f in self[:]:
