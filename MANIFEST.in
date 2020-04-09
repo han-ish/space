@@ -1,0 +1,4 @@
+include spacewar/*.ttf
+graft spacewar/img
+graft spacewar/sound
+global-exclude *.py[cod]
